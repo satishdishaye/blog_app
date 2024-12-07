@@ -13,7 +13,6 @@ class AuthenticateUser
         if (Auth::guard("users")->check()) {
             
             return $next($request);
-            
         }
         return redirect()->route('user-login');
     }

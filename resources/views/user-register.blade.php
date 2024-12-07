@@ -94,14 +94,25 @@
             <div class="form-group">
                 <label for="signup-name">Name:</label>
                 <input type="text" id="signup-name" name="name" placeholder="Enter your name" required>
+                @error('name')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+
             </div>
             <div class="form-group">
                 <label for="signup-email">Email:</label>
                 <input type="email" id="signup-email" name="email" placeholder="Enter your email" required>
+
+                @error('email')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="form-group">
                 <label for="signup-password">Password:</label>
                 <input type="password" id="signup-password" name="password" placeholder="Create a password" required>
+                @error('password')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <button type="submit" class="btn">Sign Up</button>
             <div class="form-footer">

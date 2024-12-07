@@ -108,10 +108,17 @@
             <div class="form-group">
                 <label for="title">Title:</label>
                 <input type="text" id="title" name="title" value="{{$Allpost->title}}" required>
+                @error('title')
+                  <div class="alert alert-danger" >{{ $message }}</div>
+                @enderror
+
             </div>
             <div class="form-group">
                 <label for="description">Description:</label>
                 <textarea id="description" name="description">{!! $Allpost->description !!}</textarea>
+                @error('description')
+                <div class="alert alert-danger" >{{ $message }}</div>
+              @enderror
             </div>
             <button type="submit" class="btn">Save</button>
         </form>

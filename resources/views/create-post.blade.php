@@ -107,11 +107,19 @@
             @csrf
             <div class="form-group">
                 <label for="title">Title:</label>
-                <input type="text" id="title" name="title" required>
+                <input type="text" id="title" name="title"  value="{{ old('email') }}" required>
+                @error('title')
+                  <div class="alert alert-danger" >{{ $message }}</div>
+                @enderror
+
             </div>
             <div class="form-group">
                 <label for="description">Description:</label>
-                <textarea id="description" name="description"></textarea>
+                <textarea id="description"  value="{{ old('email') }}" name="description"></textarea>
+
+                @error('description')
+                <div class="alert alert-danger">{{ $message }}</div>
+              @enderror
             </div>
             <button type="submit" class="btn">Save</button>
         </form>

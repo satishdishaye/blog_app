@@ -1,12 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-
-
 use Illuminate\Support\Facades\Auth;
-
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
 use Illuminate\Support\Facades\Hash;
@@ -15,29 +11,21 @@ use App\Models\Post;
 use App\Models\User;
 
 
-
-
 class AdminController extends Controller
 {
     public function Adminlogin(){
         return view('admin-login');
     }
-
     public function adminLoginPost(Request $request)
-    {
-       
+    { 
         $request->validate([
             "email" => 'email|required',
             "password" => 'required'
         ]);
-    
-        
         $credentials = [
             'email' => $request->input('email'),
             'password' => $request->input('password')
         ];
-    
-      
         if (Auth::guard('admins')->attempt($credentials)) {
           
             $Admin = Auth::guard('admins')->user();
@@ -46,9 +34,7 @@ class AdminController extends Controller
         } else {
           
             return redirect()->back()->with('error', 'Invalid credentials');
-        }
-    
-       
+        }  
     }
 
     public function adminHome(){
@@ -57,13 +43,11 @@ class AdminController extends Controller
         return view('admin-home',['Allpost'=>$Allpost]);
     }
 
-
     public function allUsers(){
 
         $users=User::where('status',1)->get();
         return view('all-users',['users'=>$users]);
     }
-
 
     public function blockUser(Request $request ,$p_id)
     {  
@@ -86,7 +70,7 @@ class AdminController extends Controller
     {  
         $post = Post::where('id',$p_id)->first();
         $post->status = 2;
-       
+      
         if ($post->save())
         {
             return redirect()->back()->with('success', ' Post deleted successfully.');
