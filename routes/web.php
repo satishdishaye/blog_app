@@ -29,7 +29,7 @@ Route::post('register',[UserController::class ,'registerPost'])->name('user-regi
 
 Route::group(['middleware' => ['userAuth']], function() { 
 
-    Route::get('Home-page',[UserController::class ,'homepage'])->name('user-homepage');
+    Route::get('home-page',[UserController::class ,'homepage'])->name('user-homepage');
     Route::get('my-post',[UserController::class ,'myPost'])->name('my-post'); 
     Route::get('create-post',[UserController::class ,'createPost'])->name('create-post');
     Route::post('add-create-post',[UserController::class ,'addCreatePost'])->name('add-create-post');
@@ -40,7 +40,7 @@ Route::get('delete-post/{id}',[UserController::class ,'deletePost'])->name('dele
 Route::get('get-edit-post/{id}',[UserController::class ,'editPost'])->name('edit-post');
 Route::post('edit-post/{id}',[UserController::class ,'saveEditPost'])->name('save-edit-post');
 
-Route::get('admin-login',[AdminController::class ,'Adminlogin'])->name('admin-login');
+Route::get('admin-login',[AdminController::class ,'adminlogin'])->name('admin-login');
 Route::post('admin-login-post',[AdminController::class ,'adminLoginPost'])->name('admin-login-post');
 
 Route::group(['middleware' => ['adminAuth']], function() { 

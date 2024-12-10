@@ -93,7 +93,7 @@
             @csrf
             <div class="form-group">
                 <label for="signup-name">Name:</label>
-                <input type="text" id="signup-name" name="name" placeholder="Enter your name" required>
+                <input type="text" id="signup-name" name="name" value="{{old('name')}}" placeholder="Enter your name" required>
                 @error('name')
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
@@ -101,7 +101,7 @@
             </div>
             <div class="form-group">
                 <label for="signup-email">Email:</label>
-                <input type="email" id="signup-email" name="email" placeholder="Enter your email" required>
+                <input type="email" id="signup-email" name="email" value="{{old('email')}}" placeholder="Enter your email" required>
 
                 @error('email')
                 <div class="alert alert-danger">{{ $message }}</div>
@@ -109,7 +109,7 @@
             </div>
             <div class="form-group">
                 <label for="signup-password">Password:</label>
-                <input type="password" id="signup-password" name="password" placeholder="Create a password" required>
+                <input type="password" id="signup-password" name="password"  value="{{old('password')}}" placeholder="Create a password" required>
                 @error('password')
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror

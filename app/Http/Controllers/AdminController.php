@@ -13,7 +13,7 @@ use App\Models\User;
 
 class AdminController extends Controller
 {
-    public function Adminlogin(){
+    public function adminlogin(){
         return view('admin-login');
     }
     public function adminLoginPost(Request $request)

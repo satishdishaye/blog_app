@@ -92,10 +92,10 @@
         <h1>User Panel</h1>
         <nav>
         <a href="{{route('user-login')}}" class="btn">Login</a>
-<a href="{{route('user-register')}}" class="btn">Sign Up</a>
-<a href="{{route('user-homepage')}}" class="btn">Home</a>
-<a href="{{route('my-post')}}" class="btn">My Posts</a>
-<a href="{{route('create-post')}}" class="btn">Create Post</a>
+        <a href="{{route('user-register')}}" class="btn">Sign Up</a>
+        <a href="{{route('user-homepage')}}" class="btn">Home</a>
+        <a href="{{route('my-post')}}" class="btn">My Posts</a>
+        <a href="{{route('create-post')}}" class="btn">Create Post</a>
         </nav>
     </header>
 
