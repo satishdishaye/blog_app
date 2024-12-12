@@ -100,7 +100,7 @@
     </header>
 
    
-    @foreach ( $Allpost as  $iAllpost)
+    @foreach ( $allpost as  $iAllpost)
     <div class="container" id="my-posts">
         <!-- Homepage with posts -->
        

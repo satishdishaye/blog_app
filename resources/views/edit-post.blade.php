@@ -103,11 +103,11 @@
     <!-- Create Post Page -->
     <div class="container" id="create-post">
         <h2>edit Post</h2>
-        <form method="POST" action="{{route('save-edit-post',['id' => $Allpost->id])}}">
+        <form method="POST" action="{{route('save-edit-post',['id' => $allpost->id])}}">
             @csrf
             <div class="form-group">
                 <label for="title">Title:</label>
-                <input type="text" id="title" name="title" value="{{$Allpost->title}}" required>
+                <input type="text" id="title" name="title" value="{{$allpost->title}}" required>
                 @error('title')
                   <div class="alert alert-danger" >{{ $message }}</div>
                 @enderror
@@ -115,7 +115,7 @@
             </div>
             <div class="form-group">
                 <label for="description">Description:</label>
-                <textarea id="description" name="description">{!! $Allpost->description !!}</textarea>
+                <textarea id="description" name="description">{!! $allpost->description !!}</textarea>
                 @error('description')
                 <div class="alert alert-danger" >{{ $message }}</div>
               @enderror

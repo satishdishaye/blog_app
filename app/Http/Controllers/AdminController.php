@@ -28,7 +28,7 @@ class AdminController extends Controller
         ];
         if (Auth::guard('admins')->attempt($credentials)) {
           
-            $Admin = Auth::guard('admins')->user();
+            $admin = Auth::guard('admins')->user();
             return redirect('admin-home')->with('success', 'Login successful.');
 
         } else {
@@ -39,8 +39,8 @@ class AdminController extends Controller
 
     public function adminHome(){
 
-        $Allpost=Post::get();
-        return view('admin-home',['Allpost'=>$Allpost]);
+        $allpost=Post::get();
+        return view('admin-home',['allpost'=>$allpost]);
     }
 
     public function allUsers(){
@@ -51,10 +51,10 @@ class AdminController extends Controller
 
     public function blockUser(Request $request ,$p_id)
     {  
-        $User = User::where('id',$p_id)->first();
-        $User->status = 2;
+        $user = User::where('id',$p_id)->first();
+        $user->status = 2;
 
-        if ($User->save())
+        if ($user->save())
         {
             return redirect()->back()->with('success', ' User deleted successfully.');
         }

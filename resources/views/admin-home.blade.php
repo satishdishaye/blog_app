@@ -164,7 +164,7 @@
             </ul>
         </nav>
     </header>
-    @foreach ( $Allpost as  $iAllpost)
+    @foreach ( $allpost as  $iAllpost)
     <section id="homepage">
         <h1>User Posts</h1>
         <div class="post-container">

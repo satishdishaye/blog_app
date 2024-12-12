@@ -100,7 +100,7 @@
     </header>
 
 
-    @foreach ( $Allpost as  $iAllpost)
+    @foreach ( $allpost as  $iAllpost)
     <div class="container">
         <!-- Homepage with posts -->
         <h2>Latest Posts</h2>

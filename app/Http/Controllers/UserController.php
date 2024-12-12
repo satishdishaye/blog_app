@@ -64,9 +64,9 @@ class UserController extends Controller
     
     public function homepage(){
 
-        $Allpost=Post::get();
+        $allpost=Post::get();
 
-        return view('user-panel',['Allpost'=>$Allpost]);
+        return view('user-panel',['allpost'=>$allpost]);
     }
 
     public function createPost(){
@@ -97,9 +97,9 @@ class UserController extends Controller
     {
         $user = Auth::guard('users')->user();
         
-        $Allpost=Post::where('user_id', $user->id)->get();
+        $allpost=Post::where('user_id', $user->id)->get();
       
-        return view('my-post',['Allpost'=>$Allpost]);
+        return view('my-post',['allpost'=>$allpost]);
     }
     public function deletePost(Request $request ,$p_id)
     {  
@@ -118,9 +118,9 @@ class UserController extends Controller
     }
     public function editPost($pid){
 
-        $Allpost=Post::where('id',$pid)->first();
+        $allpost=Post::where('id',$pid)->first();
       
-        return view('edit-post',['Allpost'=>$Allpost]);
+        return view('edit-post',['allpost'=>$allpost]);
     }
     public function saveEditPost( Request $request,$pid)
     {  
